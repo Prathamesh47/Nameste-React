@@ -22,7 +22,7 @@ ver
 * Transitive Dependencies
 
 */
-import React,{lazy, Suspense} from "react";
+import React,{lazy, Suspense, useState} from "react";
 import ReactDOM from "react-dom/client";
 //Default Import
 import Footer from "./components/Footer";
@@ -65,6 +65,9 @@ import Basic from "./components/forms";
     // Upon on demand Loading -> upon render -> suspend loading ->
 
     const AppLayout = () =>{
+
+        
+
         return (
             
               <React.Fragment>
@@ -98,6 +101,7 @@ import Basic from "./components/forms";
 
     const appRouter = createBrowserRouter([
         {
+            
             path:"/",
             element:<AppLayout/>,
             errorElement:<Error/>,
@@ -120,8 +124,18 @@ import Basic from "./components/forms";
             },
             {
                 path:"/",
-                element:<Body/>,
+                element:<Body/> 
+                
             },
+            // {
+            //     path:"/b",
+            //     element:<Body 
+            //     user ={{
+            //         name:"Nameste React",
+            //         email:"prathamesh@gmail.com",
+            //     }}/>,
+            // },
+
             {
                
                 path:"/restaurant/:resId",

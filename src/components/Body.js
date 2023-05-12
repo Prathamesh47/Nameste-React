@@ -1,5 +1,5 @@
 import RestrauntCard from "./RestrauntCard";
-import restaurantList from "./restaurantList";
+import {restaurantList} from "../constants";
 import { useState, useEffect } from "react";
 import Shimmer from "./shimmer.js";
 import {Link} from "react-router-dom";
@@ -111,8 +111,9 @@ const Body = () => {
       <div className="flex flex-wrap">
         {filteredRestaurants.map((restaurant) => {
           return (
-            <Link to={"/restaurant/"+restaurant.data.id} key={restaurant.data.id}>
-            <RestrauntCard restaurant={restaurant} />
+            <Link 
+            to={"/restaurant/"+restaurant.data.id} key={restaurant.data.id}>
+            <RestrauntCard  restaurant={restaurant}  /> 
             </Link>
           );
         })}
