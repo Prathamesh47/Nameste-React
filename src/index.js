@@ -29,6 +29,15 @@ import Footer from "./components/Footer";
 //Named import
 import Header,  {Title} from "./components/Header";
 
+/*
+ **********************************
+ */
+import UserContext from "./utils/UserContext";
+
+/*
+ **********************************
+ */
+
 import Body from "./components/Body";
 
 import Contact from "./components/Contact";
@@ -38,6 +47,10 @@ import Error from "./components/Error";
 import Profile from "./components/Profile";
 import Shimmer from "./components/shimmer";
 import Basic from "./components/forms";
+
+import { Provider } from "react-redux";
+import store from "./utils/store";
+// import Insta from "./components/Insta";
 // import Instamart from "./components/Instamart";
 
 
@@ -66,16 +79,26 @@ import Basic from "./components/forms";
 
     const AppLayout = () =>{
 
-        
+        const [user,setUser] = useState({
+            name:"Prathamesh",
+            email:"pratham@gmail.com",
+        })
 
         return (
-            
-              <React.Fragment>
+               // UserContext provider is basically for overridding in header,outlet,footer;
+
+            <Provider store = {store}>
+              <UserContext.Provider value={{
+                user : user,
+                setUser:setUser,
+              }}>
               {/* <Title/> */}
               <Header/>
               <Outlet/>
               <Footer/>
-              </React.Fragment>
+              </UserContext.Provider>
+
+              </Provider> 
               
               /**
             header
@@ -149,6 +172,13 @@ import Basic from "./components/forms";
                 </Suspense>
                 ),
             },
+            // {
+            //     path:"/insta",
+            //     element:(<Suspense fallback={<Shimmer/>}>
+            //         <Insta/>
+            //     </Suspense>
+            //     ),
+            // },
             {
                 path:'/login',
                 element:<Basic/>

@@ -2,6 +2,18 @@ export const IMG_CDN_URL =
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 
 export const FETCH_MENU_URL ="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.4582424&lng=73.843365&submitAction=ENTER&restaurantId=";
+export const MENU_ITEM_TYPE_KEY =
+  "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
+export const RESTAURANT_TYPE_KEY =
+  "type.googleapis.com/swiggy.presentation.food.v2.Restaurant";
+
+  // export const ITEM_IMG_CDN_URL =
+  // "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
+
+  // export const RES_IMG_CDN =
+  export const CART_FALLBACK_IMG = 
+  "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0";
+  
   export const restaurantList = [
     {
       type: "restaurant",
