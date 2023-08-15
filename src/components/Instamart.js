@@ -1,5 +1,6 @@
 import { useState } from "react";
 import instamart from "../assets/instamart.png"
+
 const Section = ({title ,description, isVisible, setIsVisible}) => {
     // const [isVisible,setIsVisible] =useState(false);
     return(
@@ -20,6 +21,8 @@ const Section = ({title ,description, isVisible, setIsVisible}) => {
         </div>
     )
 }
+
+
 
 const Instamart = () => {
     const [visibleSection, setVisibleSection] =useState("about");

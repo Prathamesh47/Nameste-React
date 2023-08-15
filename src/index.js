@@ -28,6 +28,7 @@ import ReactDOM from "react-dom/client";
 import Footer from "./components/Footer";
 //Named import
 import Header,  {Title} from "./components/Header";
+import Cart from "./components/Cart";
 
 /*
  **********************************
@@ -43,14 +44,14 @@ import Body from "./components/Body";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter , RouterProvider, Outlet } from "react-router-dom";
-import Error from "./components/Error";
+
 import Profile from "./components/Profile";
 import Shimmer from "./components/shimmer";
 import Basic from "./components/forms";
 
 import { Provider } from "react-redux";
 import store from "./utils/store";
-import Cart from "./components/Cart.js";
+
 // import Insta from "./components/Insta";
 // import Instamart from "./components/Instamart";
 

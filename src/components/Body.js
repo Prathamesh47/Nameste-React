@@ -52,11 +52,10 @@ const Body = () => {
   // // Optional Chaining
   //   // setAllRestaurants(json.data.cards[2].data.data.cards);
   //   // setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
-  //   console.log(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle)
+  //   console.log(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   //   setAllRestaurants(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   //   setFilteredRestaurant(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-
-
+    
   try {
     const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
     // if response is not ok then throw new Error
@@ -90,7 +89,6 @@ const Body = () => {
   } catch (error) {
     console.error(error); // show error in console
   }
-    
   }
   const isOnline =useOnline();
 
