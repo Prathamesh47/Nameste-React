@@ -29,6 +29,15 @@ import Footer from "./components/Footer";
 //Named import
 import Header,  {Title} from "./components/Header";
 
+/*
+ **********************************
+ */
+import UserContext from "./utils/UserContext";
+
+/*
+ **********************************
+ */
+
 import Body from "./components/Body";
 
 import Contact from "./components/Contact";
@@ -38,10 +47,12 @@ import Error from "./components/Error";
 import Profile from "./components/Profile";
 import Shimmer from "./components/shimmer";
 import Basic from "./components/forms";
+
+import { Provider } from "react-redux";
+import store from "./utils/store";
+import Cart from "./components/Cart.js";
+// import Insta from "./components/Insta";
 // import Instamart from "./components/Instamart";
-
-
-
 
 
     // React.createElement => Object =>HTML(DOM)
@@ -51,31 +62,35 @@ import Basic from "./components/forms";
     // JSX => React.createElement() => Object => HTML(DOM)
     //JSK has only one parent
 
-    
-
-
-
 
     // Props-properties
 
-
-    
     const Instamart = lazy(()=>import("./components/Instamart"));
     const About = lazy (()=>import("./components/About"))
     // Upon on demand Loading -> upon render -> suspend loading ->
 
     const AppLayout = () =>{
 
-        
+        const [user,setUser] = useState({
+            name:"Prathamesh",
+            email:"pratham@gmail.com",
+        })
 
         return (
-            
-              <React.Fragment>
+               // UserContext provider is basically for overridding in header,outlet,footer;
+
+            <Provider store = {store}>
+              <UserContext.Provider value={{
+                user : user,
+                setUser:setUser,
+              }}>
               {/* <Title/> */}
               <Header/>
               <Outlet/>
               <Footer/>
-              </React.Fragment>
+              </UserContext.Provider>
+
+              </Provider> 
               
               /**
             header
@@ -104,7 +119,7 @@ import Basic from "./components/forms";
             
             path:"/",
             element:<AppLayout/>,
-            errorElement:<Error/>,
+            // errorElement:<Error/>,
             children:[
             {
                 path:"/about",    //  parentPath/{path} => localhost:1244/about
@@ -149,9 +164,19 @@ import Basic from "./components/forms";
                 </Suspense>
                 ),
             },
+            // {
+            //     path:"/insta",
+            //     element:(<Suspense fallback={<Shimmer/>}>
+            //         <Insta/>
+            //     </Suspense>
+            //     ),
+            // },
             {
                 path:'/login',
                 element:<Basic/>
+            },{
+                path:'/cart',
+                element:<Cart/>
             }
         ]
         },
