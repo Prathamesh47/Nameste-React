@@ -19,6 +19,7 @@ import { useContext } from "react";
 
 const Body = () => {
   // const searchTxt="KFC";
+  
 
   // SearchText is a local state variable
 
@@ -26,6 +27,8 @@ const Body = () => {
   const [searchInput, setSearchInput] = useState(); // To create state variable
   const [filteredRestaurants, setFilteredRestaurant] = useState([]);
   const {user, setUser} = useContext(UserContext);
+
+
 
   
 
@@ -37,19 +40,55 @@ const Body = () => {
     {getRestaurants()};
   }, []);
 
-  console.log("render");
+
 
 
   async function getRestaurants() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.4587777&lng=73.8426415&page_type=DESKTOP_WEB_LISTING"
-    );
-    const json = await data.json();
-    console.log(json);
-  // Optional Chaining
-    setAllRestaurants(json.data.cards[2].data.data.cards);
-    setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
-    console.log((json?.data?.cards[2]?.data?.data?.cards));
+  //   const data = await fetch(
+  //     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+  //   );
+  //   const json = await data.json();
+  //   // console.log(json);
+  // // Optional Chaining
+  //   // setAllRestaurants(json.data.cards[2].data.data.cards);
+  //   // setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
+  //   console.log(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+  //   setAllRestaurants(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  //   setFilteredRestaurant(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    
+  try {
+    const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
+    // if response is not ok then throw new Error
+    if (!response.ok) {
+      const err = response.status;
+      throw new Error(err);
+    } else {
+      const json = await response.json();
+
+      // initialize checkJsonData() function to check Swiggy Restaurant data
+      async function checkJsonData(jsonData) {
+        for (let i = 0; i < jsonData?.data?.cards.length; i++) {
+
+          // initialize checkData for Swiggy Restaurant data
+          let checkData = json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+
+          // if checkData is not undefined then return it
+          if (checkData !== undefined) {
+            return checkData;
+          }
+        }
+      }
+
+      // call the checkJsonData() function which return Swiggy Restaurant data
+      const resData = await checkJsonData(json);
+
+      // update the state variable restaurants with Swiggy API data
+      setAllRestaurants(resData);
+      setFilteredRestaurant(resData);
+    }
+  } catch (error) {
+    console.error(error); // show error in console
+  }
   }
   const isOnline =useOnline();
 
@@ -59,10 +98,11 @@ const Body = () => {
     return <h1>🔴 Offline, please check your internet connection</h1>;
   }
 
-  console.log("render");
+  
 
   // not render (early)
   // if(!allRestaurants) return null;
+
 
   
   return allRestaurants?.length === 0 ? (
@@ -71,6 +111,7 @@ const Body = () => {
   
    (
     <>
+
       <div className="search-container p-5 bg-pink-50 my-5 ">
         <input
           type="text"
@@ -96,7 +137,7 @@ const Body = () => {
         >
           Search
         </button>
-        <input value={user.name}
+        {/* <input value={user.name}
               onChange={(e) => 
                 setUser({
                   ...user,
@@ -110,7 +151,7 @@ const Body = () => {
                   ...user,
                   email:e.target.value,
                 })
-              }></input>
+              }></input> */}
       </div>
 
       {/* <div className="restaurant-list">
@@ -124,18 +165,28 @@ const Body = () => {
         <RestrauntCard restaurant ={restaurantList[7]}/>
         <RestrauntCard restaurant ={restaurantList[8]}/>
         <RestrauntCard restaurant ={restaurantList[9]}/>
-        <RestrauntCard restaurant ={restaurantList[10]}/>
+        <RestrauntCard resta,urant ={restaurantList[10]}/>
         <RestrauntCard restaurant ={restaurantList[11]}/>
       </div> */}
-
+      
       <div className="flex flex-wrap">
-        {filteredRestaurants.map((restaurant) => {
+
+
+        { filteredRestaurants===undefined ?(
+          <p className="font-bold p-3 m-2">Data is loading...</p>
+        )
+        :
+        
+        filteredRestaurants.map((restaurant) => {
           return (
             <Link 
-            to={"/restaurant/"+restaurant.data.id} key={restaurant.data.id}>
-            <RestrauntCard  restaurant={restaurant}  /> 
+            to={"/restaurant/"+restaurant.info.id} key={restaurant.info.id}>
+            <RestrauntCard  restaurant={restaurant.info}  /> 
             </Link>
+
+            
           );
+
         })}
       </div>
     </>

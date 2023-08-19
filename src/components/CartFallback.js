@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { CART_FALLBACK_IMG } from "../constants";
 
 const CartFallback = ({ text, btnText }) => {
+
 	return (
 		<div className="flex flex-col justify-center items-center">
 			<img src={CART_FALLBACK_IMG} alt="" className="h-[200px] w-[200px]" />

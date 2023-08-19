@@ -14,7 +14,7 @@ const useRestaurant = (resId) => {
         const res_data=await response.json();
         // console.log(json);
         setRestaurant((res_data?.data?.cards[0]?.card?.card?.info));
-        // console.log((json?.data?.cards[0]?.card?.card?.info));
+        console.log((res_data?.data?.cards[0]?.card?.card?.info));
         // const menuItemsList = res_data.data.cards[2]["groupedCard"].cardGroupMap.REGULAR.cards;
         // const itemCategory = "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
         // const NestedItemCategory = "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory";

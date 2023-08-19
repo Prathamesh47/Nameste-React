@@ -14,6 +14,10 @@ export const RESTAURANT_TYPE_KEY =
   export const CART_FALLBACK_IMG = 
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0";
   
+  export const swiggy_menu_api_URL =
+  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&&submitAction=ENTER&restaurantId=";
+
+
   export const restaurantList = [
     {
       type: "restaurant",

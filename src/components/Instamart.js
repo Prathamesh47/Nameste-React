@@ -1,4 +1,6 @@
 import { useState } from "react";
+import instamart from "../assets/instamart.png"
+
 const Section = ({title ,description, isVisible, setIsVisible}) => {
     // const [isVisible,setIsVisible] =useState(false);
     return(
@@ -20,14 +22,24 @@ const Section = ({title ,description, isVisible, setIsVisible}) => {
     )
 }
 
+
+
 const Instamart = () => {
     const [visibleSection, setVisibleSection] =useState("about");
     return(
+        <>
+        <div className="container">
+      <div className="flex flex-col justify-center items-center gap-10 p-5">
+        <span className='text-blue-dark font-bold text-4xl'>Coming Soon ...</span>
+        <img className="w-[300px]" alt="instamert" src= {instamart} />
+      </div>
+    </div>
         <div>
             <h1 className="text-3xl p-2 m-2 font-bold">Instamart</h1>
             <Section 
             title={"About Instamart"}
-            description = {"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"}
+            description = {"Instamart is a chain of online convenience stores. Instant meals, snacks, fruits and vegetables, ice creams, and other things are available through these virtual convenience s Swiggy provides these things through its partner “dark stores,” which are exclusively available online and its hubs."}
+
              isVisible={visibleSection==="about"}
              setIsVisible={()=>{
                 setVisibleSection("about")
@@ -36,7 +48,7 @@ const Instamart = () => {
             />
              <Section 
             title={"Team Instamart"}
-            description = {"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"}
+            description = {"Instamart Timing: 7 am – 1 am Daily Customer Care:– 080-6746 6666  Email:- support@swiggy.in"}
              isVisible={visibleSection==="team"}
              setIsVisible={()=>{
                 setVisibleSection("team")
@@ -45,7 +57,7 @@ const Instamart = () => {
              />
              <Section 
             title={"Careers"}
-            description = {"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"}
+            description = {"You can access Instamart in the Swiggy app by clicking on the Instamart tile on the home page of the Swiggy app.Instamart aims to fulfill the unmet grocery needs of its urban customer, at even the odd times of the day."}
              isVisible={visibleSection==="careers"}
              setIsVisible={()=>
                 {
@@ -53,6 +65,7 @@ const Instamart = () => {
                 }}
              />
         </div>
+        </>
     )
 }
 

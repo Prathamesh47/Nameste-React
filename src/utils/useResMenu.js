@@ -1,51 +1,65 @@
 import { useEffect, useState } from "react";
 import {RESTAURANT_TYPE_KEY,
     MENU_ITEM_TYPE_KEY} from "../constants";
+import { swiggy_menu_api_URL } from "../constants";
 
-const useResMenu=(
-    RESTAURANT_TYPE_KEY,
+const useResMenu=(resId,
+
   MENU_ITEM_TYPE_KEY
 )=>{
     const [menu,setMenu]=useState(null);
     useEffect(()=>{
         getRestaurantMenu();
     },[])
-    const [restaurant, setRestaurant] = useState(null);
-    async function getRestaurantMenu(){
-        const data = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=23.022505&lng=72.5713621&restaurantId=52630");
-        const json= await data.json();
-        console.log(json.data.cards[3].groupedCard.cardGroupMap.REGULAR.cards[7].card.card.itemCards);
-        setMenu(json.data.cards[3].groupedCard.cardGroupMap.REGULAR.cards[7].card.card.itemCards)
+    
+    // async function getRestaurantMenu(){
+    //     const data = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId="+resId+"&submitAction=ENTER");
+    //     const json= await data.json();
 
-        // const restaurantData =
-        //   json?.data?.cards
-        //     ?.map((x) => x.card)
-        //     ?.find((x) => x && x.card["@type"] === RESTAURANT_TYPE_KEY)?.card
-        //     ?.info || null;
-        // setRestaurant(restaurantData);
+    //     console.log(json?.data?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card.itemCards);
 
-        // const menuItemsData =
-        // json?.data?.cards
-        //   .find((x) => x.groupedCard)
-        //   ?.groupedCard?.cardGroupMap?.REGULAR?.cards?.map(
-        //     (x) => x.card?.card
-        //   )
-        //   ?.filter((x) => x["@type"] == MENU_ITEM_TYPE_KEY)
-        //   ?.map((x) => x.itemCards)
-        //   .flat()
-        //   .map((x) => x.card?.info) || [];
-
-        //   const uniqueMenuItems = [];
-        // menuItemsData.forEach((item) => {
-        //   if (!uniqueMenuItems.find((x) => x.id === item.id)) {
-        //     uniqueMenuItems.push(item);
-        //   }
-        // });
-        // setMenu(uniqueMenuItems);
-      
-        
+    //     setMenu(json?.data?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card?.itemCards);  
          
-    }
+    // }
+
+    async function getRestaurantMenu() {
+        try {
+          const response = await fetch(swiggy_menu_api_URL + resId);
+          if (!response.ok) {
+            const err = response.status;
+            throw new Error(err);
+          } else {
+            const json = await response.json();
+    
+            // Set restaurant data
+           
+    
+            // Set menu item data
+            const menuItems =
+              json?.data?.cards
+                .find((x) => x.groupedCard)
+                ?.groupedCard?.cardGroupMap?.REGULAR?.cards?.map(
+                  (x) => x.card?.card
+                )
+                ?.filter((x) => x["@type"] == MENU_ITEM_TYPE_KEY)
+                ?.map((x) => x.itemCards)
+                .flat()
+                .map((x) => x.card?.info) || [];
+    
+            const uniqueMenu = [];
+            menuItems.forEach((item) => {
+              if (!uniqueMenu.find((x) => x.id === item.id)) {
+                uniqueMenu.push(item);
+              }
+            });
+            setMenu(uniqueMenu);
+            
+          }
+        } catch (err) {
+          setMenu([]);
+         
+        }
+      }
 
     return menu;
     // return [restaurant, menu];
