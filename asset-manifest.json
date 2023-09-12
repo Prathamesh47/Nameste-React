@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.js": "/Nameste-React/static/js/main.657a0033.js",
+    "static/js/956.98edbd14.chunk.js": "/Nameste-React/static/js/956.98edbd14.chunk.js",
+    "static/js/135.82392efb.chunk.js": "/Nameste-React/static/js/135.82392efb.chunk.js",
+    "static/media/instamart.png": "/Nameste-React/static/media/instamart.20d940bc05befa0a8fae.png",
+    "static/media/contact.png": "/Nameste-React/static/media/contact.e1693199009bd31bb9af.png",
+    "index.html": "/Nameste-React/index.html",
+    "main.657a0033.js.map": "/Nameste-React/static/js/main.657a0033.js.map",
+    "956.98edbd14.chunk.js.map": "/Nameste-React/static/js/956.98edbd14.chunk.js.map",
+    "135.82392efb.chunk.js.map": "/Nameste-React/static/js/135.82392efb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.657a0033.js"
+  ]
+}
