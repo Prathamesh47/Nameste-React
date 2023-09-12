@@ -8,7 +8,7 @@ import { useContext } from "react";
     const {user} = useContext(UserContext);
     return(
       <div className="p-10 flex items-center justify-center m-6 shadow-sm">
-      <div className="w-[240px] rounded-lg box-border h-[350px] border-4 hover:scale-125 "> 
+      <div className="w-[240px] rounded-lg box-border h-[350px] border-4 hover:scale-125 p-2"> 
       {/* <div className=" items-center flex flex-col w-[300px] h-[350px] p-2 m-1 shadow-lg bg-pink-50 "> */}
         <img src={IMG_CDN_URL
       +cloudinaryImageId}/>

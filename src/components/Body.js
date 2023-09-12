@@ -111,11 +111,11 @@ const Body = () => {
   
    (
     <>
-
-      <div className="search-container p-5 bg-pink-50 my-5 ">
+      
+      <div className="search-container  bg-pink-50 my-5 relative  flex w-1/8 mx-[20px] sm:mx-[200px] md:mx-[100px] sm:w-1/2 flex-wrap items-center justify-center">
         <input
           type="text"
-          className="focus:bg-purple-300 p-2 m-2 "
+          className=" relative m-0 -mr-0.5 block  min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
           placeholder="Search"
           value={searchInput}
           onChange={(e) => {
@@ -125,7 +125,7 @@ const Body = () => {
         />
 
         <button
-          className="p-2 m-2 bg-purple-800 hover:bg-gray-500 text-white rounded-md"
+          className=" bg-purple-800 hover:bg-gray-500 text-white rounded-md relative z-[2] flex items-center rounded-r bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
           onClick={() => {
             //need to filter data
             //update the data
@@ -137,22 +137,9 @@ const Body = () => {
         >
           Search
         </button>
-        {/* <input value={user.name}
-              onChange={(e) => 
-                setUser({
-                  ...user,
-                  name:e.target.value,
-                  
-                })
-              }></input>
-        <input value={user.email}
-              onChange={(e) => 
-                setUser({
-                  ...user,
-                  email:e.target.value,
-                })
-              }></input> */}
+        
       </div>
+     
 
       {/* <div className="restaurant-list">
         <RestrauntCard restaurant ={restaurantList[0]}/>

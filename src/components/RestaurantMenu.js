@@ -19,6 +19,8 @@ const RestaurantMenu = () => {
 
   const dispatch = useDispatch();
 
+  
+
   const addFoodItem=(item)=>{
     dispatch(addItem(item))
   }
@@ -30,7 +32,7 @@ const RestaurantMenu = () => {
   ) : (
     <>
       <div>
-        <div className="flex basis-full h-60 justify-evenly items-center bg-blue-dark text-gray p-8">
+        <div className="flex h-60 justify-evenly items-center bg-blue-dark text-gray p-4 bg-black text-white w-100 mx-auto sm:m-auto">
           {/* <h1>Restaurant id:{resId}</h1> */}
           <img className="w-[254px] h-[165px] mon:w-[130] mob:[81px]" src={IMG_CDN_URL + restaurant?.cloudinaryImageId} alt={restaurant.name}/>
           <div className="flex flex-col basis-[540] m-5">
@@ -38,7 +40,7 @@ const RestaurantMenu = () => {
 
           <h3>{restaurant?.cuisines.join(", ")}</h3>
           
-          <h3 className="text-yellow-800">⭐{restaurant?.avgRating} </h3>
+          <h3 className="text-yellow-500">⭐{restaurant?.avgRating} </h3>
           {/* <div>|</div> */}
           <div>{restaurant?.sla.slaString}</div>
           <h3>{restaurant?.costForTwoMessage}</h3>
@@ -51,16 +53,16 @@ const RestaurantMenu = () => {
         </div>
 
         <div className="menu">
-          <h3 className="font-bold text-xl p-2 m-2">MENU</h3>
-          <div>
+          <h3 className="font-bold text-xl p-2  mt-2 mx-[200px] justify-evenly ">MENU</h3>
+          <div className="mx-[200px]">
             {resMenu ? resMenu.map((item) => {
               const name  = item?.name;
               return (
                 <div className="flex  basis-[400px]">
                   <h1 className="m-2 p-2 text-lg font-bold w-3/5">{name}</h1>
-                  <div className=" flex justify-evenly items-center w-[100px] h-[34px] mt-2.5 text-gray-count outline-none border bg-green-100 border-gray ">
+                  <div className=" flex justify-evenly items-center w-[100px] h-[34px] mt-2.5 text-gray-count outline-none border bg-orange-100 hover:bg-red-400 border-gray rounded-md">
                   <button
-                    className="  text-xl text-grey-count font-semibold"
+                    className="  text-xl text-grey-count font-semibold  "
                     onClick={() => addFoodItem(item)}
                   >
                     Add Item

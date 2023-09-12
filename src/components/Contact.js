@@ -33,7 +33,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className="flex flex-row m-[100px] justify-evenly overflow-y-hidden contact-container border">
+      <div className="flex flex-row m-[100px] sm:m-auto md:m-auto justify-evenly overflow-y-hidden contact-container border">
         <div className="w-1/2 contact-left flex justify-center items-center  py-10 ">
           <img src={contact} alt="" />
         </div>

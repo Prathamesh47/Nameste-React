@@ -10,7 +10,7 @@ const Cart = () =>{
     const handleClearCart = ()=>{
         dispatch(clearCart());
     }
-    console.log(< FoodItem key={cartItems} {...cartItems.props} />)
+    console.log(< FoodItem key={cartItems} {...cartItems} />)
 
 
     return(
@@ -21,10 +21,10 @@ const Cart = () =>{
             onClick={()=>handleClearCart()} >Clear Cart</button>
             <div className="flex">
             {cartItems  ? cartItems.map((item) => (
-            < FoodItem key={item} item={item} />
+            < FoodItem key={item} {...item} />
             // console.log(< FoodItem key={item}{...item} />)
             
-            )): <div></div>}
+            )): <div>Loading...</div>}
             </div>
            
             
