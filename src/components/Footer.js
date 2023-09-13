@@ -7,6 +7,7 @@ const Footer = () => {
       <a
         href="https://www.linkedin.com/in/prathamesh-dikondawar-0a743a22a/"
         target="_blank"
+        rel="noreferrer"
         title="Prathamesh Dikondawar's Linkedin Profile"
         className="text-blue-800 px-2"
       >

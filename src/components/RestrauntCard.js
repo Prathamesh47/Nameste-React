@@ -10,7 +10,7 @@ import { IMG_CDN_URL } from "../constants";
       <div className="p-10 flex items-center justify-center m-6 shadow-sm">
       <div className="w-[240px] rounded-lg box-border h-[350px] border-4 hover:scale-125 p-2"> 
       {/* <div className=" items-center flex flex-col w-[300px] h-[350px] p-2 m-1 shadow-lg bg-pink-50 "> */}
-      <img src={IMG_CDN_URL + cloudinaryImageId} alt="Description of the image" />
+      <img src={IMG_CDN_URL + cloudinaryImageId} alt="A colorful hot air balloon floating in the sky" />
 
         <h2 className="font-bold text-xl">{name}</h2>
         <h3>{cuisines.join(", ")}</h3>
