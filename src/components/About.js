@@ -70,7 +70,7 @@
 
 
 import React from 'react';
-import { FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp } from 'react-icons/fa';
+import {  FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 

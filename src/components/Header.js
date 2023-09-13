@@ -1,14 +1,14 @@
-import { useState, useContext } from "react";
+// import { useState, useContext } from "react";
 import {Link, useNavigate} from "react-router-dom";
-import Basic from "./forms.js";
-import UserContext from "../utils/UserContext.js";
+// import Basic from "./forms.js";
+// import UserContext from "../utils/UserContext.js";
 import { useSelector } from "react-redux";
 import foodpavilion from "../assets/download.png";
 
 
-import useOnline from "../utils/useOnline.js";
+// import useOnline from "../utils/useOnline.js";
 
-import Instamart from "./Instamart.js";
+// import Instamart from "./Instamart.js";
 
 // import Insta from "./insta.js"
 
@@ -26,11 +26,11 @@ export const Title = ()=>(
     // const [title,setTitle]=useState("Food Villa");
 
   export const Header = ()=>{
-    const [isLogin,setIsLogin]=useState(false);
+    // const [isLogin,setIsLogin]=useState(false);
 
-    const isOnline=useOnline();
+    // const isOnline=useOnline();
 
-    const {user} = useContext(UserContext);
+    // const {user} = useContext(UserContext);
 
     const cartItems = useSelector(store => store.cart.items);
 

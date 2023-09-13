@@ -8,9 +8,10 @@ const useResMenu=(resId,
   MENU_ITEM_TYPE_KEY
 )=>{
     const [menu,setMenu]=useState(null);
-    useEffect(()=>{
-        getRestaurantMenu();
-    },[])
+    useEffect(() => {
+      // Include all dependencies here
+      getRestaurantMenu();
+    }, []);
     
     // async function getRestaurantMenu(){
     //     const data = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId="+resId+"&submitAction=ENTER");
@@ -25,6 +26,7 @@ const useResMenu=(resId,
     async function getRestaurantMenu() {
         try {
           const response = await fetch(swiggy_menu_api_URL + resId);
+          console.log(response);
           if (!response.ok) {
             const err = response.status;
             throw new Error(err);
@@ -41,7 +43,7 @@ const useResMenu=(resId,
                 ?.groupedCard?.cardGroupMap?.REGULAR?.cards?.map(
                   (x) => x.card?.card
                 )
-                ?.filter((x) => x["@type"] == MENU_ITEM_TYPE_KEY)
+                ?.filter((x) => x["@type"] === MENU_ITEM_TYPE_KEY)
                 ?.map((x) => x.itemCards)
                 .flat()
                 .map((x) => x.card?.info) || [];

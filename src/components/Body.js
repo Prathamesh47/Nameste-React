@@ -1,12 +1,12 @@
 import RestrauntCard from "./RestrauntCard";
-import {restaurantList} from "../constants";
+
 import { useState, useEffect } from "react";
 import Shimmer from "./shimmer.js";
 import {Link} from "react-router-dom";
 import { filterData } from "../utils/helper";
 import  useOnline  from "../utils/useOnline";
-import UserContext from "../utils/UserContext";
-import { useContext } from "react";
+// import UserContext from "../utils/UserContext";
+// import { useContext } from "react";
 // What is State
 // what is React Hooks? ->{functions} normal java script, one of most used hook is useState
 // what is useState
@@ -26,7 +26,7 @@ const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [searchInput, setSearchInput] = useState(); // To create state variable
   const [filteredRestaurants, setFilteredRestaurant] = useState([]);
-  const {user, setUser} = useContext(UserContext);
+  // const {user, setUser} = useContext(UserContext);
 
 
 
@@ -37,7 +37,7 @@ const Body = () => {
   useEffect(() => {
     // API call
     // console.log("dependencies called")
-    {getRestaurants()};
+    getRestaurants();
   }, []);
 
 
@@ -48,10 +48,7 @@ const Body = () => {
   //     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
   //   );
   //   const json = await data.json();
-  //   // console.log(json);
-  // // Optional Chaining
-  //   // setAllRestaurants(json.data.cards[2].data.data.cards);
-  //   // setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
+ 
   //   console.log(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   //   setAllRestaurants(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   //   setFilteredRestaurant(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);

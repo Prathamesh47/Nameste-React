@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import {
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-  FaWhatsapp,
-} from "react-icons/fa";
+// import {
+//   FaGithub,
+//   FaInstagram,
+//   FaLinkedin,
+//   FaTwitter,
+//   FaWhatsapp,
+// } from "react-icons/fa";
 import contact from "../assets/contact.png";
 
 const Contact = () => {
