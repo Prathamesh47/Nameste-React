@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import {RESTAURANT_TYPE_KEY,
-    MENU_ITEM_TYPE_KEY} from "../constants";
+// import {RESTAURANT_TYPE_KEY,
+//     MENU_ITEM_TYPE_KEY} from "../constants";
 import { swiggy_menu_api_URL } from "../constants";
 
 const useResMenu=(resId,

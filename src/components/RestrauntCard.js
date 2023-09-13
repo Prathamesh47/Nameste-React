@@ -1,7 +1,7 @@
 
 import { IMG_CDN_URL } from "../constants";
-import UserContext from "../utils/UserContext";
-import { useContext } from "react";
+// import UserContext from "../utils/UserContext";
+// import { useContext } from "react";
 //Optional Chaining hw
   const RestrauntCard = ({restaurant}) => {
     const {name,cuisines,cloudinaryImageId,costForTwo,areaName,avgRatingString,sla} = restaurant;
