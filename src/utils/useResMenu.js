@@ -3,9 +3,7 @@ import { useEffect, useState } from "react";
 //     MENU_ITEM_TYPE_KEY} from "../constants";
 import { swiggy_menu_api_URL } from "../constants";
 
-const useResMenu=(resId,
-
-  MENU_ITEM_TYPE_KEY
+const useResMenu=(resId,MENU_ITEM_TYPE_KEY
 )=>{
     const [menu,setMenu]=useState(null);
     useEffect(() => {
@@ -53,7 +51,7 @@ const useResMenu=(resId,
       getMenu();
       
     
-    }, []);
+    }, [resId,MENU_ITEM_TYPE_KEY]);
     
     // async function getRestaurantMenu(){
     //     const data = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId="+resId+"&submitAction=ENTER");

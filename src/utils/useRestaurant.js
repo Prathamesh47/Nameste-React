@@ -15,7 +15,7 @@ const useRestaurant = (resId) => {
         
         }
         getRestaurantInfo();
-    },[]);
+    },[resId]);
 
    
         return restaurant
