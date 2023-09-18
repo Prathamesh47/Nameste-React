@@ -95,7 +95,7 @@ const About = () => {
                                 <FaInstagram className='text-2xl  cursor-pointer text-pink-600 opacity-70 ' />
                             </Link>
                             <Link
-                                to={' https://twitter.com/@pratham03d'}
+                                to={'https://twitter.com/@pratham03d'}
                                 className='cursor-pointer'>
                                 <FaTwitter className='text-2xl  cursor-pointer text-sky-500 opacity-70 ' />
                             </Link>
@@ -104,11 +104,7 @@ const About = () => {
                                 className='cursor-pointer'>
                                 <FaLinkedin className='text-2xl  cursor-pointer text-blue-800 opacity-70 ' />
                             </Link>
-                            <Link
-                                to={'https://wa.me/919657830169'}
-                                className='cursor-pointer'>
-                                <FaWhatsapp className='text-2xl  cursor-pointer text-green-700 opacity-70 ' />
-                            </Link>
+                            
                             </div>
     </div>
   );
