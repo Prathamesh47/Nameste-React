@@ -44,14 +44,7 @@ const Body = () => {
 
 
   async function getRestaurants() {
-  //   const data = await fetch(
-  //     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-  //   );
-  //   const json = await data.json();
- 
-  //   console.log(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-  //   setAllRestaurants(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-  //   setFilteredRestaurant(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+
     
   try {
     const response = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
