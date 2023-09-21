@@ -102,7 +102,7 @@ const Body = () => {
    (
     <>
       
-      <div className="search-container  bg-pink-50 my-5 relative  flex w-1/8 mx-[20px] sm:mx-[200px] md:mx-[100px] sm:w-1/2 flex-wrap items-center justify-center">
+      <div className="search-container  bg-pink-50 my-5 relative  flex w-full mx-[20px] sm:mx-[200px] md:mx-[100px] sm:w-1/2 flex-wrap items-center justify-center">
         <input
           type="text"
           className=" relative m-0 -mr-0.5 block  min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
@@ -110,16 +110,18 @@ const Body = () => {
           value={searchInput}
           onChange={(e) => {
             //e.target.vaule=> whatever you write on input
+            const data = filterData(searchInput,allRestaurants);
+            setFilteredRestaurant(data);
             setSearchInput(e.target.value);
           }}
         />
 
         <button
-          className=" bg-purple-800 hover:bg-gray-500 text-white rounded-md relative z-[2] flex items-center rounded-r bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
+          className=" bg-purple-800 hover:bg-gray-500  rounded-md relative  flex items-center rounded-r bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
           onClick={() => {
             //need to filter data
             //update the data
-            // console.log(searchInput);
+            
             const data = filterData(searchInput,allRestaurants);
             // console.log(data);
             setFilteredRestaurant(data);
@@ -131,20 +133,7 @@ const Body = () => {
       </div>
      
 
-      {/* <div className="restaurant-list">
-        <RestrauntCard restaurant ={restaurantList[0]}/>
-        <RestrauntCard restaurant ={restaurantList[1]}/>
-        <RestrauntCard restaurant ={restaurantList[2]}/>
-        <RestrauntCard restaurant ={restaurantList[3]}/>
-        <RestrauntCard restaurant ={restaurantList[4]}/>
-        <RestrauntCard restaurant ={restaurantList[5]}/>
-        <RestrauntCard restaurant ={restaurantList[6]}/>
-        <RestrauntCard restaurant ={restaurantList[7]}/>
-        <RestrauntCard restaurant ={restaurantList[8]}/>
-        <RestrauntCard restaurant ={restaurantList[9]}/>
-        <RestrauntCard resta,urant ={restaurantList[10]}/>
-        <RestrauntCard restaurant ={restaurantList[11]}/>
-      </div> */}
+      
       
       <div className="flex flex-wrap">
 

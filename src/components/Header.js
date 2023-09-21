@@ -34,8 +34,8 @@ export const Header = () => {
        <div className="mb-2 sm:mb-0">
         <Title />
       </div>
-      <div className="nav-items">
-        <ul className="flex py-10">
+      <div className="nav-items flex justify-center items-center">
+        <ul className="flex">
           <div className="hover:bg-orange-400 rounded-md p-2">
             <Link to="/">
               <li className="px-2">Home</li>
@@ -68,11 +68,11 @@ export const Header = () => {
         </ul>
       </div>
 
-      <div className="login-btn flex px-5 py-1 mt-2 sm:mt-0">
+      <div className="login-btn py-3 flex items-center justify-center px-2 sm:mt-0 mt-2 ">
         {/* <h1 className="mt-10 px-8 mb-8">{isOnline ? '✅' : '🔴'}</h1> */}
 
         <button
-          className="hover:text-orange-400 mt-8 mb-8"
+          className="hover:text-orange-400  bg-gray-200 h-fit p-1 px-2 border border-gray-500 rounded-md"
           onClick={() => {
             navigate("/login");
           }}

@@ -33,7 +33,7 @@ const RestaurantMenu = () => {
         <div className="flex h-60 justify-evenly items-center bg-blue-dark text-gray p-4 bg-black text-white w-100 mx-auto sm:m-auto">
           {/* <h1>Restaurant id:{resId}</h1> */}
           <img
-            className="w-[254px] h-[165px] mon:w-[130] mob:[81px]"
+            className="w-[254px] h-[165px] rounded-md mon:w-[130] mob:[81px]"
             src={IMG_CDN_URL + restaurant?.cloudinaryImageId}
             alt={restaurant.name}
           />
@@ -69,12 +69,12 @@ const RestaurantMenu = () => {
                           {name}
                         </h1>
                         <p className="item-cost">Rs-{item.price / 100}</p>
-                        <p className="item-desc mt-[14px] leading-4 w-inherit tracking-tighter text-base">{item?.description}</p>
+                        <p className="item-desc mt-[14px] text-gray-400 w-inherit  ">{item?.description}</p>
                       </div>
                       <div className="menu-img-wrapper  items-end flex flex-col justify-center w-[300px] overflow-hidden h-auto ">
                         {item?.imageId && (
                           <img
-                            className="menu-item-img h-[100px] w-[100px] border-r-4 "
+                            className="menu-item-img rounded-md h-[100px] w-[100px] border-r-4 "
                             src={ITEM_IMG_CDN_URL + item?.imageId}
                             alt={item?.name}
                           />

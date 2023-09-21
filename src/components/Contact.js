@@ -1,5 +1,8 @@
 import React from "react";
 import { useState } from "react";
+import {IoMdCall} from "react-icons/io"
+import {FiMail} from "react-icons/fi"
+
 // import {
 //   FaGithub,
 //   FaInstagram,
@@ -33,23 +36,34 @@ const Contact = () => {
 
   return (
     <>
-      <div className="flex flex-row m-[100px] sm:m-auto md:m-auto justify-evenly overflow-y-hidden contact-container border">
-        <div className="w-1/2 contact-left flex justify-center items-center  py-10 ">
-          <img src={contact} alt="" />
-        </div>
-        <div
-          id="contact"
-          className=" font-xl  flex items-center md:px-12 lg:px-16 xl:px-22 py-16 pt-8 md:mx-40 mx-8 justify-center "
-        >
-          <h2
-            className="w-1/2 text-2xl font-bold mb-4 text-white
-      text-center"
-          >
-            Contact Me
-          </h2>
-          <form onSubmit={handleSubmit}>
+      <div className="flex w-full min-h-screen justify-center items-center"> 
+        <div id="contact" className="flex flex-col space-y-2 md:flex-row md:space-x-8 md:space-y-0 bg-cyan-700 w-full max-w-4xl p-8 rounded-xl shadow-lg text-white">
+          <div className="flex flex-col  space-y-8 justify-between">
+            <div>
+              <h1 className="font-bold text-4xl tracking-wide">Contact Us</h1>
+            </div>
+
+            <div className="flex flex-col space-y-6">
+              <div className="inline-flex space-x-2 items-center">
+              <IoMdCall className=""></IoMdCall>
+              
+              <h4 className="px-2">+(123) 456 7890</h4>
+              </div>
+
+              <div className="inline-flex space-x-2 items-center">
+              <FiMail></FiMail>
+              
+              <h4 className="px-2">pratham03@gmail.com</h4>
+              </div>
+            </div>
+            
+          </div>
+
+          <div>
+            <div className="bg-white rounded-xl shodow-lg p-8">
+            <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label className="block text-gray-800 text-sl font-medium">
+              <label className="text-black ">
                 NAME:
               </label>
               <input
@@ -58,11 +72,11 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="border-r-5 border-2 w-[50vh]  bg-gray-400 border-gray-300 rounded-lg p-2  mt-2  focus:outline-none focus:ring ring-sky-300 ring-offset-0"
+                className="ring-1 ring-gray-300 w-full mt-2 rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300"
               />
             </div>
             <div className="mt-8">
-              <label className="block text-gray-800 text-sl font-medium mt-2 p-3">
+              <label className="text-black">
                 EMAIL:
               </label>
               <input
@@ -71,11 +85,11 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="border bg-gray-400 border-gray-300 rounded p-2 w-full mt-2 focus:outline-none focus:ring ring-sky-300 ring-offset-0"
+                className="ring-1 ring-gray-300 w-full mt-2 rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300"
               />
             </div>
             <div className="mt-8">
-              <label className="block text-gray-800 text-sl font-medium py-2">
+              <label className="text-black">
                 MESSAGE:
               </label>
               <textarea
@@ -83,18 +97,22 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="border bg-gray-400 border-gray-300 rounded p-2 w-full mt-2 p-3 focus:outline-none focus:ring ring-sky-300 ring-offset-0"
+                className="ring-1 ring-gray-300 w-full mt-2 rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300"
               />
             </div>
             <div className="py-4">
               <button
                 type="submit"
-                className="uppercase py-3 text-sm font-bold tracking-wide bg-blue-500 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:ring ring-sky-300 ring-offset-0 "
+                className="inline-block self-end bg-cyan-700 text-whit font-bold rounded-lg px-6 py-2 uppercase "
               >
                 Submit
               </button>
             </div>
           </form>
+            </div>
+          </div>
+
+          
         </div>
       </div>
     </>
@@ -102,3 +120,11 @@ const Contact = () => {
 };
 
 export default Contact;
+
+
+{/* <div className="">
+          <img src={contact} alt="" />
+        </div> */}
+
+
+        
