@@ -10,6 +10,7 @@ import Shimmer from "./shimmer";
 import useResMenu from "../utils/useResMenu";
 import { addItem } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -24,6 +25,19 @@ const RestaurantMenu = () => {
   const addFoodItem = (item) => {
     dispatch(addItem(item));
   };
+  
+  const notify=()=>{
+    toast.success('🍟Item added into the cart!', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
+  }
 
   return !restaurant ? (
     <Shimmer />
@@ -82,7 +96,9 @@ const RestaurantMenu = () => {
                         <div className=" flex justify-evenly items-center w-[100px] h-[34px] mt-2.5 text-gray-count outline-none border bg-orange-100 hover:bg-red-400 border-gray rounded-md">
                           <button
                             className="  text-xl text-grey-count font-semibold  "
-                            onClick={() => addFoodItem(item)}
+                            onClick={() => {addFoodItem(item);
+                              notify()}
+                            }
                           >
                             ADD +
                           </button>

@@ -52,6 +52,8 @@ import Basic from "./components/forms";
 
 import { Provider } from "react-redux";
 import store from "./utils/store";
+import { ToastContainer } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 // import Insta from "./components/Insta";
 // import Instamart from "./components/Instamart";
@@ -67,6 +69,10 @@ import store from "./utils/store";
 const Instamart = lazy(() => import("./components/Instamart"));
 const About = lazy(() => import("./components/About"));
 // Upon on demand Loading -> upon render -> suspend loading ->
+
+
+
+
 
 const AppLayout = () => {
   const [user, setUser] = useState({
@@ -88,8 +94,21 @@ const AppLayout = () => {
         <Header />
         <Outlet />
         <Footer />
+        <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+        />
       </UserContext.Provider>
     </Provider>
+   
 
     /**
             header

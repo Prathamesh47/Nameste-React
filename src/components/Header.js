@@ -5,6 +5,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import foodpavilion from "../assets/download.png";
 import { BsFillCartCheckFill } from "react-icons/bs";
+import { FcAbout } from "react-icons/fc";
+import {IoMdContact} from "react-icons/io";
+import {RiHome7Line} from "react-icons/ri";
+
 
 // import useOnline from "../utils/useOnline.js";
 
@@ -38,25 +42,38 @@ export const Header = () => {
 
       <div className="nav-items flex justify-center  items-center">
         <ul className="flex px-10">
-          <div className="   p-2">
+
+
+          <div className=" p-2">
             <Link to="/">
-              <li className="px-2 p-2 hover:bg-orange-400  rounded-md">Home</li>
+              <div className="flex flex-row  p-2 hover:bg-orange-400  rounded-md">
+                <li className=" flex flex-row py-1 ">
+                <RiHome7Line/>
+                </li>
+                <h3 className="px-1   ">Home</h3>
+              </div>
             </Link>
           </div>
 
-          <div className=" p-2 ">
+          <div className=" p-2">
             <Link to="/about">
-              <li className="px-2 p-2 hover:bg-orange-400  rounded-md">
-                About
-              </li>
+              <div className="flex flex-row  p-2 hover:bg-orange-400  rounded-md">
+                <li className=" flex flex-row py-1 ">
+                <FcAbout/>
+                </li>
+                <h3 className="px-1   ">About</h3>
+              </div>
             </Link>
           </div>
 
           <div className=" p-2">
             <Link to="/contact">
-              <li className="px-2 p-2 hover:bg-orange-400  rounded-md">
-                Contact
-              </li>
+              <div className="flex flex-row  p-2 hover:bg-orange-400  rounded-md">
+                <li className=" flex flex-row py-1 ">
+                <IoMdContact/>
+                </li>
+                <h3 className="px-1   ">Contact</h3>
+              </div>
             </Link>
           </div>
 
