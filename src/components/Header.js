@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 // import UserContext from "../utils/UserContext.js";
 import { useSelector } from "react-redux";
 import foodpavilion from "../assets/download.png";
+import { BsFillCartCheckFill } from "react-icons/bs";
 
 // import useOnline from "../utils/useOnline.js";
 
@@ -31,38 +32,50 @@ export const Header = () => {
   const navigate = useNavigate();
   return (
     <div className=" h-[100px] flex justify-between  shadow-lg sm:from-blue-100 sm:to-blue-200 sm:px-4">
-       <div className="mb-2 sm:mb-0">
+      <div className="mb-2 sm:mb-0">
         <Title />
       </div>
-      <div className="nav-items flex justify-center items-center">
-        <ul className="flex">
-          <div className="hover:bg-orange-400 rounded-md p-2">
+
+      <div className="nav-items flex justify-center  items-center">
+        <ul className="flex px-10">
+          <div className="   p-2">
             <Link to="/">
-              <li className="px-2">Home</li>
+              <li className="px-2 p-2 hover:bg-orange-400  rounded-md">Home</li>
             </Link>
           </div>
 
-          <div className="hover:bg-orange-400 rounded-md p-2">
+          <div className=" p-2 ">
             <Link to="/about">
-              <li className="px-2">About</li>
+              <li className="px-2 p-2 hover:bg-orange-400  rounded-md">
+                About
+              </li>
             </Link>
           </div>
 
-          <div className="hover:bg-orange-400 rounded-md p-2">
+          <div className=" p-2">
             <Link to="/contact">
-              <li className="px-2">Contact</li>
+              <li className="px-2 p-2 hover:bg-orange-400  rounded-md">
+                Contact
+              </li>
             </Link>
           </div>
 
-          <div className="hover:bg-orange-400 rounded-md p-2">
+          <div className=" p-2">
             <Link to="/instamart">
-              <li className="px-2">Instamart</li>
+              <li className="px-2 p-2 hover:bg-orange-400  rounded-md">
+                Instamart
+              </li>
             </Link>
           </div>
 
-          <div className="hover:bg-orange-400 rounded-md p-2">
+          <div className=" p-2">
             <Link to="/cart">
-              <li className="px-2 ">Cart- {cartItems.length}</li>
+              <div className="flex flex-row  p-2 hover:bg-orange-400  rounded-md">
+                <li className=" flex flex-row py-1 ">
+                  <BsFillCartCheckFill />
+                </li>
+                <h3 className="px-1   ">Cart</h3>
+              </div>
             </Link>
           </div>
         </ul>
@@ -72,7 +85,7 @@ export const Header = () => {
         {/* <h1 className="mt-10 px-8 mb-8">{isOnline ? '✅' : '🔴'}</h1> */}
 
         <button
-          className="hover:text-orange-400  bg-gray-200 h-fit p-1 px-2 border border-gray-500 rounded-md"
+          className="hover:bg-orange-400  bg-gray-200 h-fit p-1 px-2  rounded-md"
           onClick={() => {
             navigate("/login");
           }}

@@ -5,6 +5,7 @@ import Shimmer from "./shimmer.js";
 import {Link} from "react-router-dom";
 import { filterData } from "../utils/helper";
 import  useOnline  from "../utils/useOnline";
+import {BiSearchAlt2} from "react-icons/bi"; 
 // import UserContext from "../utils/UserContext";
 // import { useContext } from "react";
 // What is State
@@ -100,13 +101,16 @@ const Body = () => {
   ) :
   
    (
-    <>
+    <div className="w-full p-4">
       
-      <div className="search-container  bg-pink-50 my-5 relative  flex w-full mx-[20px] sm:mx-[200px] md:mx-[100px] sm:w-1/2 flex-wrap items-center justify-center">
+     
+        <div className="  w-full flex items-center justify-center">
+          <div className=" search flex flex-row border border-black-500 p-1 my-5  rounded-lg w-full sm:w-1/2 lg:w-2/5 items-center ">
+
         <input
           type="text"
-          className=" relative m-0 -mr-0.5 block  min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
-          placeholder="Search"
+          className="focus:outline-none bg-transparent w-full p-2"
+          placeholder="Search for Restaurant or Food "
           value={searchInput}
           onChange={(e) => {
             //e.target.vaule=> whatever you write on input
@@ -114,28 +118,19 @@ const Body = () => {
             setFilteredRestaurant(data);
             setSearchInput(e.target.value);
           }}
-        />
+          />
+        <BiSearchAlt2 className="w-6 h-6"/>
+          </div>
+        </div>
 
-        <button
-          className=" bg-purple-800 hover:bg-gray-500  rounded-md relative  flex items-center rounded-r bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
-          onClick={() => {
-            //need to filter data
-            //update the data
-            
-            const data = filterData(searchInput,allRestaurants);
-            // console.log(data);
-            setFilteredRestaurant(data);
-          }}
-        >
-          Search
-        </button>
         
-      </div>
+        
+      
      
 
       
       
-      <div className="flex flex-wrap">
+      <div className="w-full grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  p-10 gap-6">
 
 
         { filteredRestaurants===undefined ?(
@@ -155,7 +150,7 @@ const Body = () => {
 
         })}
       </div>
-    </>
+    </div>
   );
 };
 
