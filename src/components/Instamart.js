@@ -25,16 +25,16 @@ const Section = ({title ,description, isVisible, setIsVisible}) => {
 
 
 const Instamart = () => {
-    const [visibleSection, setVisibleSection] =useState("about");
+    // const [visibleSection, setVisibleSection] =useState("about");
     return(
         <>
-        <div className="container">
+        <div className="container h-screen">
       <div className="flex flex-col justify-center items-center gap-10 p-5">
         <span className='text-blue-dark font-bold text-4xl'>Coming Soon ...</span>
         <img className="w-[300px]" alt="instamert" src= {instamart} />
       </div>
     </div>
-        <div>
+        {/* <div>
             <h1 className="text-3xl p-2 m-2 font-bold">Instamart</h1>
             <Section 
             title={"About Instamart"}
@@ -64,7 +64,7 @@ const Instamart = () => {
                     setVisibleSection("careers")
                 }}
              />
-        </div>
+        </div> */}
         </>
     )
 }

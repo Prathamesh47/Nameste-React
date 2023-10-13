@@ -7,7 +7,7 @@ const FoodItem = ({name, category, imageId, price})=>{
             <img src = {IMG_CDN_URL + imageId} alt={name} /> 
             
            
-            <h2 className="font-bold text-xl text-blue-500 ">{name}</h2>
+            <h2 className="font-bold text-lg text-blue-500 ">{name}</h2>
             <h3>{category}</h3>
             <h4>Rupees:{price/100}</h4>
         </div>

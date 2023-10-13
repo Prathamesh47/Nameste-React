@@ -14,11 +14,13 @@ const Cart = () =>{
 
 
     return(
-        <div>
+        <div className="h-screen">
 
-            <h1 className="font-bold text-2xl m-5 justify-center text-center text-red-600" >Cart Items - {cartItems.length}</h1>
-            <button className="bg-green-100 p-2 m-5" 
+            <h1 className="font-bold text-2xl m-5 justify-center text-center " >Your Cart ({cartItems.length} items)</h1>
+            <div className="px-10">
+            <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 " 
             onClick={()=>handleClearCart()} >Clear Cart</button>
+            </div>
             <div className="flex flex-wrap">
             {cartItems  ? cartItems.map((item) => (
             < FoodItem key={item} {...item} />
