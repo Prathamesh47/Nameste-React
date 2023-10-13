@@ -8,8 +8,8 @@ import {
 import useRestaurant from "../utils/useRestaurant";
 import Shimmer from "./shimmer";
 import useResMenu from "../utils/useResMenu";
-import { addItem } from "../utils/cartSlice";
-import { useDispatch } from "react-redux";
+import { addItem, removeItem } from "../utils/cartSlice";
+import { useDispatch,useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
 const RestaurantMenu = () => {
@@ -25,7 +25,11 @@ const RestaurantMenu = () => {
   const addFoodItem = (item) => {
     dispatch(addItem(item));
   };
+  const removeFoodItem=()=>{
+    dispatch(removeItem());
+  }
   
+  const cartItems = useSelector((store) => store.cart.items);
   const notify=()=>{
     toast.success('🍟Item added into the cart!', {
       position: "bottom-center",
@@ -102,7 +106,13 @@ const RestaurantMenu = () => {
                           >
                             ADD +
                           </button>
+                          
                         </div>
+                        {/* <div className="flex">
+                          <button>-</button>
+                          <div>{cartItems.length}</div>
+                          <button>+</button> */}
+                        {/* </div> */}
                       </div>
                     </div>
                 );
