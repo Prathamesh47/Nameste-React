@@ -97,7 +97,7 @@ const RestaurantMenu = () => {
                             alt={item?.name}
                           />
                         )}
-                        <div className=" flex justify-evenly items-center w-[100px] h-[34px] mt-2.5 text-gray-count outline-none border bg-orange-100 hover:bg-red-400 border-gray rounded-md">
+                        <div className=" flex justify-evenly items-center p-1 mt-2.5 text-gray-count outline-none border bg-green-100 hover:bg-green-600 hover:text-white border-gray rounded-md">
                           <button
                             className="  text-xl text-grey-count font-semibold  "
                             onClick={() => {addFoodItem(item);

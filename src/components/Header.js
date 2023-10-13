@@ -8,6 +8,7 @@ import { BsFillCartCheckFill } from "react-icons/bs";
 import { FcAbout } from "react-icons/fc";
 import {IoMdContact} from "react-icons/io";
 import {RiHome7Line} from "react-icons/ri";
+import { UseSelector } from "react-redux/es/hooks/useSelector";
 
 
 // import useOnline from "../utils/useOnline.js";
@@ -88,10 +89,10 @@ export const Header = () => {
           <div className=" p-2">
             <Link to="/cart">
               <div className="flex flex-row  p-2 hover:bg-orange-400  rounded-md">
-                <li className=" flex flex-row py-1 ">
+                <li className=" flex flex-row py-2 ">
                   <BsFillCartCheckFill />
                 </li>
-                <h3 className="px-1   ">Cart</h3>
+                <h3 className="">{cartItems.length}</h3>
               </div>
             </Link>
           </div>
