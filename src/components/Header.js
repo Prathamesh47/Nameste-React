@@ -8,7 +8,7 @@ import { BsFillCartCheckFill } from "react-icons/bs";
 import { FcAbout } from "react-icons/fc";
 import {IoMdContact} from "react-icons/io";
 import {RiHome7Line} from "react-icons/ri";
-import { UseSelector } from "react-redux/es/hooks/useSelector";
+// import { UseSelector } from "react-redux/es/hooks/useSelector";
 
 
 // import useOnline from "../utils/useOnline.js";
@@ -36,16 +36,17 @@ export const Header = () => {
 
   const navigate = useNavigate();
   return (
-    <div className=" h-[100px] flex justify-between  shadow-lg sm:from-blue-100 sm:to-blue-200 sm:px-4">
+    <div className="h-100 flex flex-col md:flex-row justify-between shadow-lg sm:from-blue-100 sm:to-blue-200 sm:px-4">
       <div className="mb-2 sm:mb-0">
         <Title />
       </div>
 
-      <div className="nav-items flex justify-center  items-center">
-        <ul className="flex px-10">
+
+      <div className="nav-items  justify-center   items-center">
+        <ul className="flex px-10 mt-5">
 
 
-          <div className=" p-2">
+          <div className=" p-2 ">
             <Link to="/">
               <div className="flex flex-row  p-2 hover:bg-orange-400  rounded-md">
                 <li className=" flex flex-row py-1 ">
@@ -92,7 +93,7 @@ export const Header = () => {
                 <li className=" flex flex-row py-2 ">
                   <BsFillCartCheckFill />
                 </li>
-                <h3 className="">{cartItems.length}</h3>
+                <h3 className="">{cartItems.length} </h3>
               </div>
             </Link>
           </div>

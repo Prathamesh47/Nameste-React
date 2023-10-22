@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 import { filterData } from "../utils/helper";
 import  useOnline  from "../utils/useOnline";
 import {BiSearchAlt2} from "react-icons/bi"; 
+import { SWIGGY_URL } from "../constants";
 // import UserContext from "../utils/UserContext";
 // import { useContext } from "react";
 // What is State
@@ -48,7 +49,7 @@ const Body = () => {
 
     
   try {
-    const response = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
+    const response = await fetch(SWIGGY_URL);
     // if response is not ok then throw new Error
     if (!response.ok) {
       const err = response.status;
@@ -101,10 +102,10 @@ const Body = () => {
   ) :
   
    (
-    <div className="w-full p-4">
+    <div className="w-screen p-2">
       
      
-        <div className="  w-full flex items-center justify-center">
+        <div className="  w-screen flex items-center justify-center">
           <div className=" search flex flex-row border border-black-500 p-1 my-5  rounded-lg w-full sm:w-1/2 lg:w-2/5 items-center ">
 
         <input

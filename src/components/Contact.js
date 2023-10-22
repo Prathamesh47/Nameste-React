@@ -122,9 +122,7 @@ const Contact = () => {
 export default Contact;
 
 
-{/* <div className="">
-          <img src={contact} alt="" />
-        </div> */}
+
 
 
         
