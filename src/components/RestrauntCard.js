@@ -17,7 +17,8 @@ const RestrauntCard = ({ restaurant }) => {
   // const {user} = useContext(UserContext);
   return (
     
-      <div className="h-[295.98px] w-3/4 md:w-full rounded-lg box-border  flex flex-col items-start justify-center hover:scale-105 shadow-md transition-all p-2  ">
+      <div className="h-[295.98px] w-3/4 md:w-full rounded-lg box-border  flex flex-col items-start 
+      justify-center hover:scale-105 shadow-md transition-all p-2  ">
         <img
           className="overflow-hidden sm:w-1/2 md:w-full object-cover rounded-md"
           src={IMG_CDN_URL + cloudinaryImageId}
