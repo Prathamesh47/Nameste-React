@@ -50,6 +50,7 @@ const Body = () => {
     
   try {
     const response = await fetch(SWIGGY_URL);
+    console.log(response)
     // if response is not ok then throw new Error
     if (!response.ok) {
       const err = response.status;
