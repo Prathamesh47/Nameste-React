@@ -17,7 +17,7 @@ const useResMenu=(resId,MENU_ITEM_TYPE_KEY
             throw new Error(err);
           } else {
             const json = await response.json();
-    
+            console.log(json)
             // Set restaurant data
            
     
