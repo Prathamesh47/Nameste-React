@@ -7,9 +7,9 @@ const useRestaurant = (resId) => {
         
         const response =await fetch(swiggy_menu_api_URL+resId);
         const res_data=await response.json();
-        // console.log(json);
-        setRestaurant((res_data?.data?.cards[2]?.card?.card?.info));
-        console.log((res_data?.data?.cards[2]?.card?.card));
+        console.log(response);
+        setRestaurant((res_data?.data?.cards[0]?.card?.card?.info));
+        console.log((res_data?.data?.cards[0]?.card?.card));
     
     }
     
