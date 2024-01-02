@@ -1,5 +1,5 @@
-Namaste React Live Course from Zero to Hero 🚀 by Akshay Saini Founder of NamasteDev. 
-
+![Screenshot 2024-01-02 161751](https://github.com/Prathamesh47/Nameste-React/assets/120591562/c15e52c5-3694-46b9-87f9-8ac31eaeac20)
+![Screenshot 2024-01-02 161727](https://github.com/Prathamesh47/Nameste-React/assets/120591562/c5a2c372-9e1e-4d63-936f-f8ec5bfccb27)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
